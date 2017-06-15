@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <div v-yjz="color">{{num}}</div>
+    <button @click="add">ADD</button>
+
+
+
+</div>
+
+</body>
+<script src="vue.min.js"></script>
+<script>
+    Vue.directive("yjz",function (el,binding) {
+        el.style="color:"+binding.value;
+        console.log(binding)
+
+    })
+    var app=new Vue({
+        el:"#app",
+        data: {
+            num: 0,
+            color:"red"
+        },
+        methods:{
+            add:function () {
+                this.num++;
+            }
+        }
+
+    })
+
+
+    //    def
+    //            :
+    //            Object
+    //    expression
+    //            :
+    //            "color"
+    //    modifiers
+    //            :
+    //            Object
+    //    name
+    //            :
+    //            "yjz"
+    //    rawName
+    //            :
+    //            "v-yjz"
+    //    value
+    //            :
+    //            "red"
+
+</script>
+</html>
