@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <div>{{num}}</div>
+    <button @click="add">ADD</button>
+</div>
+
+</body>
+<script src="vue.min.js"></script>
+<script>
+    var app=new Vue({
+        el:"#app",
+        data: {
+            num: 0,
+            color:"red"
+        },
+        methods:{
+            add:function () {
+                this.num++;
+            }
+        },
+        beforeCreate:function () {
+              console.log("init")
+        },
+        created:function () {
+            console.log("创建完成，但是没有绑定dom")
+        },
+        beforeMount:function () {
+            console.log("模版挂载之前")
+
+        },
+        mounted:function () {
+            console.log("模版挂载之前")
+
+        },
+        beforeUpdate:function () {
+            console.log("组件更新之前")
+
+        },
+        updated:function () {
+            console.log("组件更新之后")
+
+        },
+        activated:function () {
+            console.log("组件激活")
+
+        },
+        deactivated:function () {
+            console.log("组件移除")
+
+        },
+        beforeDestory:function () {
+            console.log("销毁前")
+
+        },
+        destoryed:function () {
+            console.log("销毁后")
+
+        },
+
+    })
+
+
+    //    def
+    //            :
+    //            Object
+    //    expression
+    //            :
+    //            "color"
+    //    modifiers
+    //            :
+    //            Object
+    //    name
+    //            :
+    //            "yjz"
+    //    rawName
+    //            :
+    //            "v-yjz"
+    //    value
+    //            :
+    //            "red"
+
+</script>
+</html>

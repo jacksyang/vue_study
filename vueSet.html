@@ -6,30 +6,27 @@
 </head>
 <body>
 
-<div >
-    <app></app>
-
-
-</div>
 <div id="app">
-    <app></app>
-
-
+    <div v-for="item in arr">{{item}}</div>
+    <div onclick="add()">56565</div>
 </div>
 
 </body>
 <script src="vue.min.js"></script>
 <script>
-  var  a=Vue.extend({
-      template:"<p>{{abs}}</p>",
-      data:function () {
-          return{
-              abs:"yjz"
-          }
-      }
-  })
-  new a().$mount("app")
-  new a().$mount("#app")
+    function add() {
+        Vue.set(app.arr,1,"dd")
+    }
+
+    var app=new Vue({
+        el:"#app",
+        data: {
+            num: 0,
+            arr:["abc","234","3234"]
+        },
+
+
+    })
 
 
     //    def
