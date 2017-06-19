@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div >
+    <app></app>
+
+
+</div>
+<div id="app">
+    <app></app>
+
+
+</div>
+<div onclick="destory()">123</div>
+
+</body>
+<script src="vue.min.js"></script>
+<script>
+    var  a=Vue.extend({
+        template:"<p>{{abs}}</p>",
+        data:function () {
+            return{
+                abs:"yjz"
+            }
+        },
+        mounted:function () {
+            console.log("123")
+        },
+        destroyed:function () {
+            console.log("destory")
+        }
+    })
+    var vm=new a().$mount("app")
+    function destory() {
+        vm.$destroy()
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <div >{{num}}</div>
+    <button @click="add(2)">ADD(2)</button>
+    <btn @click.native="add(2)">ADD(2)</btn>
+
+
+
+</div>
+     <button onclick="app.add(3)">123</button>
+
+</body>
+<script src="vue.min.js"></script>
+<script>
+     var bth={
+         template:`<div>我是组件</div>`
+     }
+    var app=new Vue({
+        el:"#app",
+        data: {
+            num: 0,
+            color:"red"
+        },
+        components:{
+            btn:bth,
+        },
+        methods:{
+            add:function () {
+                this.num++;
+            }
+        }
+
+    })
+
+
+</script>
+</html>

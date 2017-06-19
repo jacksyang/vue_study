@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <div >{{num}}</div>
+    <button @click="add(2)">ADD(2)</button>
+    <button onclick="reduce()">reduce(2)</button>
+
+
+
+
+
+</div>
+
+</body>
+<script src="vue.min.js"></script>
+<script>
+
+    var app=new Vue({
+        el:"#app",
+        data: {
+            num: 0,
+            color:"red"
+        },
+        methods:{
+            add:function () {
+                this.num++;
+            }
+        },
+
+
+    })
+    app.$on("reduce",function () {
+        this.num--
+    })
+    function  reduce() {
+        app.$emit("reduce")
+
+    }
+    //混入的应用
+
+
+</script>
+</html>
