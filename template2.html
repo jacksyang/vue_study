@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <button @click="add">ADD</button>
+
+</div>
+
+</body>
+<script src="vue.min.js"></script>
+<script type="x-template" id="add2">
+    <h2>
+      213123
+    </h2>
+</script>
+<script>
+
+    var app=new Vue({
+        el:"#app",
+        data: {
+            num: 0,
+            color:"red"
+        },
+        methods:{
+            add:function () {
+                this.num++;
+            }
+        },
+        template:"#add2"
+
+    })
+
+
+    //    def
+    //            :
+    //            Object
+    //    expression
+    //            :
+    //            "color"
+    //    modifiers
+    //            :
+    //            Object
+    //    name
+    //            :
+    //            "yjz"
+    //    rawName
+    //            :
+    //            "v-yjz"
+    //    value
+    //            :
+    //            "red"
+
+</script>
+</html>
