@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <yjz></yjz>
+    <div>123123</div>
+</div>
+<div id="app1">
+    <yjz></yjz>
+    <yjz1></yjz1>
+    <div>123123</div>
+</div>
+<!--&lt;!&ndash;<yjz></yjz>&ndash;&gt;是不行的-->
+</body>
+<script src="vue.min.js"></script>
+
+<script>
+    Vue.component('yjz',{
+
+        template:`<h2>你好全局组件</h2>`
+    })
+
+    var app=new Vue({
+        el:"#app",
+    })
+    var app=new Vue({
+        el:"#app1",
+        components:{
+            "yjz1":{
+                template:`<h2>你好局部组件</h2>`
+            }
+        }
+    })
+
+
+
+</script>
+</html>

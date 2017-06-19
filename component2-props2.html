@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="app1">
+    <yjz1 :here="message"></yjz1>
+</div>
+<!--&lt;!&ndash;<yjz></yjz>&ndash;&gt;是不行的-->
+</body>
+<script src="vue.min.js"></script>
+
+<script>
+    var app1=new Vue({
+        el:"#app1",
+        data:{
+            message:"china"
+        },
+        components:{
+            "yjz1":{
+                template:`<h2>你好{{ here }}</h2>`,
+                props:["here"]
+            }
+        }
+    })
+
+</script>
+</html>

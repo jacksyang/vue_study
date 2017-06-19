@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="app1">
+    <yjz1></yjz1>
+</div>
+<!--&lt;!&ndash;<yjz></yjz>&ndash;&gt;是不行的-->
+</body>
+<script src="vue.min.js"></script>
+
+<script>
+    var  cityComponents={
+        template:`<div style="color:red">Sichuan from China</div>`,
+    }
+    var  yjzComponents={
+        template:`<city></city>`,
+        components:{
+            "city":cityComponents
+        }
+    }
+
+    var app1=new Vue({
+        el:"#app1",
+        data:{
+            message:"china"
+        },
+        components:{
+            "yjz1":yjzComponents
+        }
+    })
+
+</script>
+</html>

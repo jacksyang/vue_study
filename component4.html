@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="app1">
+    <component :is="who"></component>
+    <button @click="changeC">{{who}}</button>
+</div>
+<!--&lt;!&ndash;<yjz></yjz>&ndash;&gt;是不行的-->
+</body>
+<script src="vue.min.js"></script>
+
+<script>
+    var  component1={
+        template:`<div style="color:red">111111111111111111</div>`,
+    }
+    var  component2={
+        template:`<div style="color:red">22222222222222222222</div>`,
+    }
+    var  component3={
+        template:`<div style="color:red">33333333333333333333333</div>`,
+    }
+
+
+    var app1=new Vue({
+        el:"#app1",
+        data:{
+            who:"component1"
+        },
+        components:{
+            "component1":component1,
+            "component2":component2,
+            "component3":component3,
+        },
+        methods:{
+            changeC:function () {
+                if(this.who=="component1"){
+                    this.who="component2"
+                }
+                else if(this.who=="component2"){
+                    this.who="component3"
+                }
+                else if(this.who=="component3"){
+                    this.who="component1"
+                }
+            }
+        },
+    })
+
+</script>
+</html>
